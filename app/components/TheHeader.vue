@@ -1,8 +1,8 @@
 <template>
-  <header class="fixed top-0 left-0 w-full flex items-center justify-between pl-6 pr-18 py-2 bg-white shadow-sm z-50">
+  <header class="fixed top-0 left-0 w-full flex items-center justify-between pl-6 pr-18 pt-1 bg-white shadow-sm z-50">
     <!-- Logo -->
     <div class="flex items-center">
-      <img src="@/assets/images/alfoldi_logo.jpg" alt="Logo" class="h-16 w-auto" />
+      <img src="@/assets/images/alfoldi_logo.png" alt="Logo" class="h-18 w-auto" />
     </div>
 
     <!-- Menü -->
