@@ -7,8 +7,9 @@ import mens from "./pages/mens.vue";
 </script>
 
 <template>
-  <div class="bg-gray-900 w-full h-full">
+  <div class="bg-white w-full h-full">
     <mens />
+    <Test />
   </div>
 </template>
 
