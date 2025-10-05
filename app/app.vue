@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import Test from "./components/test.vue";
 import Contact from "./pages/contact.vue";
+import productCard from "./components/productCard.vue";
+import mens from "./pages/mens.vue";
 
 </script>
 
 <template>
   <div class="bg-gray-900 w-full h-full">
-    <Test />
+    <mens />
   </div>
 </template>
 
