@@ -1,2 +1,15 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
 @import "tailwindcss";
+@import "primeicons/primeicons.css";
+
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+
 
