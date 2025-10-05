@@ -34,6 +34,7 @@ export default defineNuxtConfig({
         process.env.NUXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
       FIREBASE_APP_ID: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
       FIREBASE_MEASUREMENT_ID: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
     },
   },
 

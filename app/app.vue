@@ -3,19 +3,19 @@ import Test from "./components/test.vue";
 import Contact from "./pages/contact.vue";
 import productCard from "./components/productCard.vue";
 import mens from "./pages/mens.vue";
-import TheHeader from "./components/TheHeader.vue";
+import DesktopHeader from "./components/DesktopHeader.vue";
+import MoblieHeader from "./components/MoblieHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 </script>
 
 <template>
   <div>
-    <TheHeader/>
+    <DesktopHeader class="invisible md:visible" />
+    <MoblieHeader class="md:hidden" />
     <div class="bg-white w-full h-full">
-      <mens />
-      <Test />
+      <NuxtPage />
     </div>
-    <TheFooter/>
-
+    <TheFooter />
   </div>
 </template>
 

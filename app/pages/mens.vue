@@ -6,9 +6,8 @@
       <img
         src="@/assets/images/alfoldi_logo.jpg"
         alt="Alföldi logó"
-        class="filter grayscale absolute opacity-5 inset-0 w-full h-full object-contain"
+        class="filter grayscale absolute opacity-10 mx-auto mt-14 my-auto inset-0 w-7/10 h-auto object-contain"
       >
-
       <div
         class="relative max-w-3xl mx-auto mt-8 flex flex-col justify-center py-20 px-6 text-center text-gray-800 space-y-12"
       >
