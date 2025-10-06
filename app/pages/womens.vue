@@ -25,11 +25,26 @@
     </section>
 
     <div
-      class="flex flex-wrap gap-6 p-6 md:pb-32 bg-[var(--primary-brown-0)] justify-center"
+      class="flex flex-wrap gap-6 p-6 md:hidden bg-[var(--primary-brown-0)] justify-center"
     >
-      <!-- csak a visibleProducts-t rendereljük -->
       <ProductCard
         v-for="product in visibleProducts"
+        :key="product.sku"
+        :name="product.name"
+        :image="product.image"
+        :price="product.price"
+        :sku="product.sku"
+        :sizes="product.sizes"
+        class="w-60"
+      />
+    </div>
+
+    <!-- Desktop: csak md+ képernyőn látszik, azonnal az összes termék -->
+    <div
+      class="hidden md:flex md:flex-wrap md:gap-6 md:p-6 md:pb-32 bg-[var(--primary-brown-0)] md:justify-center"
+    >
+      <ProductCard
+        v-for="product in products"
         :key="product.sku"
         :name="product.name"
         :image="product.image"

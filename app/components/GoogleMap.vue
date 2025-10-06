@@ -1,35 +1,44 @@
 <template>
-  <div  class="shadow border border-black"/>
+  <div
+    ref="map"
+    class="shadow border border-gray-300 h-[300px] w-full overflow-hidden"
+  ></div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { ref, onMounted } from "vue";
 
 declare global {
   interface Window {
-    initMap: () => void
+    initMap: () => void;
   }
 }
 
 const config = useRuntimeConfig();
 const map = ref<HTMLElement | null>(null);
 
-// onMounted(async () => {
-//   const script = document.createElement("script");
-//   script.src = `https://maps.googleapis.com/maps/api/js?key=${config.public.googleMapsApiKey}&callback=initMap`;
-//   script.async = true;
-//   document.head.appendChild(script);
+onMounted(() => {
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${config.public.googleMapsApiKey}&callback=initMap`;
+  script.async = true;
+  document.head.appendChild(script);
 
-//   window.initMap = () => {
-//     new google.maps.Map(map.value!, {
-//       center: { lat: 47.615, lng: 19.203 },
-//       zoom: 14,
-//       mapId: "DEMO_MAP_ID",
-//     });
-//   };
-// });
+  window.initMap = () => {
+    const center = { lat: 47.491, lng: 19.059 }; // Vámház körút környéke
+
+    const mapInstance = new google.maps.Map(map.value!, {
+      center,
+      zoom: 13, // 🔍 kisebb zoom = távolabbról mutatja
+      mapId: "DEMO_MAP_ID",
+      disableDefaultUI: true,
+      clickableIcons: false,
+    });
+
+    new google.maps.Marker({
+      position: center,
+      map: mapInstance,
+      title: "Vámház körút, Budapest",
+    });
+  };
+});
 </script>
-
-<style scoped>
-/* ha kell fix méret */
-</style>
