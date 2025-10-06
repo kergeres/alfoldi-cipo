@@ -1,10 +1,10 @@
 <template>
   <section class="w-full md:px-32 md:py-32">
-    <div
-      class="block md:flex justify-around w-full flex-wrap content-center"
-    >
+    <h1 class="text-center md:hidden pb-0 pt-8">Elérhetőség</h1>
+
+    <div class="block md:flex justify-around w-full flex-wrap content-center">
       <div
-        class="text-center xl:text-start my-12 w-full xl:my-0 md:max-w-sm space-y-1 leading-tight text-gray-800 [>p]:p-3" 
+        class="text-center xl:text-start my-12 w-full xl:my-0 md:max-w-sm space-y-1 leading-tight text-gray-800 [>p]:p-3"
       >
         <p>Budapest, 1111 XY, Példa u. 7.</p>
         <p>061‑765-4321/ 0670‑123-4567</p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-6xl h-screen mx-auto">
+  <div class="w-full max-w-6xl md:h-screen mx-auto">
     <Carousel
       :value="products"
       :num-visible="4"
@@ -18,7 +18,7 @@
           :price="slotProps.data.price"
           :sku="slotProps.data.sku"
           :sizes="slotProps.data.sizes"
-          class="w-80 border border-gray-300"
+          class="md:w-80 border border-gray-300"
         />
       </template>
     </Carousel>

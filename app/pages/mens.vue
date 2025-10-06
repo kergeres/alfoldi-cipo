@@ -2,7 +2,6 @@
   <div>
     <section>
       <h1 class="text-center md:hidden pb-0 pt-8">Férfi cipők</h1>
-
       <div
         class="relative md:h-screen flex items-center justify-center overflow-hidden"
       >
@@ -23,8 +22,26 @@
       </div>
       <h1 class="pl-12 pb-0 pt-8 hidden md:block text-start">Férfi cipők</h1>
     </section>
+
+    <!-- Mobil: csak mobilon látszik, lépcsőzetes betöltéssel -->
     <div
-      class="flex flex-wrap gap-6 p-6 md:pb-32 bg-[var(--primary-brown-0)] justify-center"
+      class="flex flex-wrap gap-6 p-6 md:hidden bg-[var(--primary-brown-0)] justify-center"
+    >
+      <ProductCard
+        v-for="product in visibleProducts"
+        :key="product.sku"
+        :name="product.name"
+        :image="product.image"
+        :price="product.price"
+        :sku="product.sku"
+        :sizes="product.sizes"
+        class="w-60"
+      />
+    </div>
+
+    <!-- Desktop: csak md+ képernyőn látszik, azonnal az összes termék -->
+    <div
+      class="hidden md:flex md:flex-wrap md:gap-6 md:p-6 md:pb-32 bg-[var(--primary-brown-0)] md:justify-center"
     >
       <ProductCard
         v-for="product in products"
@@ -37,10 +54,23 @@
         class="w-60"
       />
     </div>
+
+    <!-- Load More gomb csak mobilon -->
+    <div
+      v-if="visibleProducts.length < products.length"
+      class="text-center py-6 md:hidden bg-[var(--primary-brown-0)]"
+    >
+      <button class="bg-black text-white py-2 px-4 rounded" @click="loadMore">
+        Összes megjelenítése
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from "vue";
+
+// products generálásod maradhat így
 const imagePool = [
   "https://images.unsplash.com/photo-1563434649554-58f91d22ec2c?q=80&w=879&auto=format&fit=crop&ixlib=rb-4.1.0",
   "https://images.unsplash.com/photo-1733410027841-09dc77bd1832?q=80&w=830&auto=format&fit=crop&ixlib=rb-4.1.0",
@@ -57,10 +87,10 @@ function getRandomInt(min: number, max: number) {
 
 const products = Array.from({ length: 24 }, (_, i) => {
   const randomImage = imagePool[getRandomInt(0, imagePool.length - 1)] || "";
-  const price = getRandomInt(38990, 40990); 
+  const price = getRandomInt(38990, 40990);
   const sizes = Array.from({ length: getRandomInt(3, 6) }, () =>
     getRandomInt(39, 45)
-  ); // 39-45 méretek
+  );
   const sku = `MDL${i + 1}${getRandomInt(10, 99)}`;
   return {
     name: `Cipő ${i + 1}`,
@@ -70,4 +100,12 @@ const products = Array.from({ length: 24 }, (_, i) => {
     sizes,
   };
 });
+
+const visibleCount = ref(5);
+
+const visibleProducts = computed(() => products.slice(0, visibleCount.value));
+
+function loadMore() {
+  visibleCount.value = products.length;
+}
 </script>
