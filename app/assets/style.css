@@ -3,13 +3,23 @@
 @import "tailwindcss";
 @import "primeicons/primeicons.css";
 
-
 * {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 400;
 }
 
-
-
-
+h1 {
+  color: var(--primary-brown-75);
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+@media (max-width: 768px) {
+  h1 {
+    margin-inline: 1rem;
+  }
+  p {
+    margin-inline: 1rem;
+  }
+}
