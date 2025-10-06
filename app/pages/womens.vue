@@ -25,7 +25,6 @@
       <h1 class="pl-12 pb-0 pt-8 hidden md:block text-start">Női cipők</h1>
     </section>
 
-    <!-- Mobil: csak pár cipő, lépcsőzetes betöltéssel -->
     <div
       class="flex flex-wrap gap-6 p-6 md:hidden bg-[var(--primary-brown-0)] justify-center"
     >
@@ -37,11 +36,11 @@
         :price="product.price"
         :sku="product.sku"
         :sizes="product.sizes"
-        class="w-60"
+        class="w-60 cursor-pointer"
+        @click="openProduct(product)"
       />
     </div>
 
-    <!-- Desktop: az összes cipő -->
     <div
       class="hidden md:flex md:flex-wrap md:gap-6 md:p-6 md:pb-32 bg-[var(--primary-brown-0)] md:justify-center"
     >
@@ -53,11 +52,11 @@
         :price="product.price"
         :sku="product.sku"
         :sizes="product.sizes"
-        class="w-60"
+        class="w-60 cursor-pointer"
+        @click="openProduct(product)"
       />
     </div>
 
-    <!-- Mobilon: Továbbiak megjelenítése gomb -->
     <div
       v-if="visibleProducts.length < products.length"
       class="text-center py-6 md:hidden bg-[var(--primary-brown-0)]"
@@ -66,19 +65,29 @@
         Továbbiak megjelenítése
       </button>
     </div>
+
+    <ProductModal
+      v-if="selectedProduct"
+      :product="selectedProduct"
+      @close="closeProduct"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { useProducts } from "@/composables/useProducts";
+import { useProductModal } from "@/composables/useProductModal";
 import ProductCard from "@/components/ProductCard.vue";
+import ProductModal from "@/components/ProductModal.vue";
 
-// 🔥 composable hívás — női cipőkhöz is ugyanaz
 const { products } = useProducts(24);
+const { selectedProduct, openProduct, closeProduct } = useProductModal();
 
 const visibleCount = ref(5);
-const visibleProducts = computed(() => products.value.slice(0, visibleCount.value));
+const visibleProducts = computed(() =>
+  products.value.slice(0, visibleCount.value)
+);
 
 function loadMore() {
   visibleCount.value = Math.min(visibleCount.value + 5, products.value.length);
