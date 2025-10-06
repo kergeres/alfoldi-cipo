@@ -21,6 +21,12 @@
         officia deserunt mollit anim id est laborum.
       </p>
       <br />
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur.
+      </p>
+      <br />
+    <h1 class="mt-16" >Gyártási technologia</h1>
 
       <div class="flex flex-col md:flex-row items-start gap-6">
         <div class="w-full md:w-1/3">

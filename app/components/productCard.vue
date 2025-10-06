@@ -1,7 +1,7 @@
 <template>
   <div
-    class="w-60 aspect-[4/5] bg-white rounded-xs overflow-hidden shadow-md flex flex-col cursor-pointer transition-all hover:shadow-lg"
-  >
+    class="aspect-[4/5] bg-white rounded-xs overflow-hidden shadow-md flex flex-col cursor-pointer transition-all hover:shadow-lg"
+    >
     <div class="relative h-[65%]">
       <img :src="image" :alt="name" class="w-full h-full object-cover" />
     </div>

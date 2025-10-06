@@ -13,7 +13,7 @@
         <p>Hétfő-Péntek: 10:00 - 17:30</p>
         <p>Szombat: 10:00 - 13:00</p>
 
-        <h2 class="text-xl mt-8">Rendelési információ</h2>
+        <h2 class="mt-8">Rendelési információ</h2>
         <p>
           Termékeink postai utánvéttel rendelhetők. Kérjük, hívjon minket vagy
           írjon e-mailt.

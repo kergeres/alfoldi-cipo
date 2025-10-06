@@ -21,7 +21,7 @@
           </p>
         </div>
       </div>
-      <h1 class="pl-12 pb-0 pt-8 text-start">Férfi cipők</h1>
+      <h1 class="pl-12 pb-0 pt-8 hidden md:block text-start">Férfi cipők</h1>
     </section>
     <div
       class="flex flex-wrap gap-6 p-6 md:pb-32 bg-[var(--primary-brown-0)] justify-center"
@@ -34,6 +34,7 @@
         :price="product.price"
         :sku="product.sku"
         :sizes="product.sizes"
+        class="w-60"
       />
     </div>
   </div>
@@ -55,8 +56,8 @@ function getRandomInt(min: number, max: number) {
 }
 
 const products = Array.from({ length: 24 }, (_, i) => {
-  const randomImage = imagePool[getRandomInt(0, imagePool.length - 1)];
-  const price = getRandomInt(19990, 34990); // véletlenszerű ár HUF-ban
+  const randomImage = imagePool[getRandomInt(0, imagePool.length - 1)] || "";
+  const price = getRandomInt(38990, 40990); 
   const sizes = Array.from({ length: getRandomInt(3, 6) }, () =>
     getRandomInt(39, 45)
   ); // 39-45 méretek

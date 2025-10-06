@@ -75,14 +75,17 @@
           to="/contact"
           class="text-gray-800 font-medium"
           @click="closeMenu"
-          >Kontakt</NuxtLink
+          >Elérhetőség</NuxtLink
         >
       </nav>
+       <NuxtLink
+          to="/">
       <img
         src="@/assets/images/alfoldi_logo.jpg"
         alt="Logo"
         class="h-32 w-auto absolute bottom-8 left-1/2 -translate-x-1/2"
       />
+      </NuxtLink>
     </div>
   </transition>
 </template>

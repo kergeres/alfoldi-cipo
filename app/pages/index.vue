@@ -1,5 +1,10 @@
 <template>
-  <div class="p-32 flex justify-center"><p>index</p></div>
+  <section class="pt-32">
+  <Carousel/>
+
+  </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Carousel from '~/components/Carousel.vue'; 
+</script>
