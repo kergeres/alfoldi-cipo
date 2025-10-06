@@ -18,10 +18,16 @@
           :price="slotProps.data.price"
           :sku="slotProps.data.sku"
           :sizes="slotProps.data.sizes"
-          class="md:w-80 border border-gray-300"
+          class="md:w-80 border border-gray-300 cursor-pointer"
+          @click="openProduct(slotProps.data)"
         />
       </template>
     </Carousel>
+    <ProductModal
+      v-if="selectedProduct"
+      :product="selectedProduct"
+      @close="selectedProduct = null"
+    />
   </div>
 </template>
 
@@ -29,15 +35,22 @@
 import { ref } from "vue";
 import Carousel from "primevue/carousel";
 import ProductCard from "../components/ProductCard.vue";
-import { useProducts } from "@/composables/useProducts"; // 🔥 csak ez az új sor
+import ProductModal from "../components/ProductModal.vue";
+import { useProducts } from "@/composables/useProducts";
 
-const { products } = useProducts(8); // 🔥 ugyanazt adja vissza, mint korábban
+const { products } = useProducts(8);
 
 const responsiveOptions = ref([
   { breakpoint: "1400px", numVisible: 3, numScroll: 1 },
   { breakpoint: "1024px", numVisible: 2, numScroll: 1 },
   { breakpoint: "768px", numVisible: 1, numScroll: 1 },
 ]);
+
+// modal vezérlés
+const selectedProduct = ref<any | null>(null);
+function openProduct(product: any) {
+  selectedProduct.value = product;
+}
 </script>
 
 <style scoped></style>
