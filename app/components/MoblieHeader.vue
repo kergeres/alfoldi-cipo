@@ -52,13 +52,13 @@
           </button>
           <div v-if="dropdownOpen" class="flex flex-col pl-4 mt-1 gap-1">
             <NuxtLink
-              to="/products/ferfi"
+              to="/mens"
               class="text-gray-700 hover:text-gray-900"
               @click="closeMenu"
               >Férfi cipők</NuxtLink
             >
             <NuxtLink
-              to="/products/noi"
+              to="/womens"
               class="text-gray-700 hover:text-gray-900"
               @click="closeMenu"
               >Női cipők</NuxtLink
@@ -66,13 +66,13 @@
           </div>
         </div>
         <NuxtLink
-          to="/rolunk"
+          to="/about"
           class="text-gray-800 font-medium"
           @click="closeMenu"
           >Rólunk</NuxtLink
         >
         <NuxtLink
-          to="/kontakt"
+          to="/contact"
           class="text-gray-800 font-medium"
           @click="closeMenu"
           >Kontakt</NuxtLink

@@ -35,7 +35,7 @@
       Férfi cipők
     </NuxtLink>
     <NuxtLink
-      to="/products/noi"
+      to="womens"
       class="block px-4 py-2 text-gray-800 hover:bg-gray-50"
       @click="closeDropdown"
     >
@@ -46,7 +46,7 @@
 
 
       <NuxtLink
-        to="/rolunk"
+        to="/about"
         class="relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[var(--primary-brown-75)] after:transition-all after:duration-500 hover:after:w-full"
       >
         Rólunk
