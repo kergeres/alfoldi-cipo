@@ -1,0 +1,31 @@
+{
+  "name": "nuxt-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt generate",
+    "deploy": "gh-pages -d .output/public",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^1.9.0",
+    "@primeuix/themes": "^1.2.5",
+    "@tailwindcss/vite": "^4.1.14",
+    "eslint": "^9.36.0",
+    "firebase": "^12.3.0",
+    "nuxt": "^4.1.2",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.4.0",
+    "tailwindcss": "^4.1.14",
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@primevue/nuxt-module": "^4.4.0",
+    "gh-pages": "^6.3.0",
+    "sass": "^1.93.2"
+  }
+}
