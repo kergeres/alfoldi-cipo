@@ -1,14 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
-import { primeVueThemeConfig } from "./app/plugins/primevue";
+import tailwindcss from "@tailwindcss/vite"
+import { primeVueThemeConfig } from "./app/plugins/primevue"
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
+  ssr: true,
+
   modules: ["@nuxt/eslint", "@primevue/nuxt-module"],
   css: [
-    "~/assets/variables.css", 
+    "~/assets/variables.css",
     "~/assets/style.css",
   ],
   vite: {
@@ -30,8 +32,7 @@ export default defineNuxtConfig({
       FIREBASE_DATABASE_URL: process.env.NUXT_PUBLIC_FIREBASE_DATABASE_URL,
       FIREBASE_PROJECT_ID: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID,
       FIREBASE_STORAGE_BUCKET: process.env.NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-      FIREBASE_MESSAGING_SENDER_ID:
-        process.env.NUXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+      FIREBASE_MESSAGING_SENDER_ID: process.env.NUXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
       FIREBASE_APP_ID: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
       FIREBASE_MEASUREMENT_ID: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
       googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
@@ -39,6 +40,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: '/alfoldi-cipo/',
     head: {
       link: [
         {
@@ -48,4 +50,8 @@ export default defineNuxtConfig({
       ],
     },
   },
-});
+
+  nitro: {
+    preset: "github-pages"
+  }
+})
