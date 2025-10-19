@@ -2,10 +2,10 @@
   <transition name="fade">
     <div
       v-if="product"
-      class="fixed inset-0 bg-[var(--primary-brown-100)]/99 flex items-center justify-center z-50"
+      class="fixed inset-0 bg-[var(--primary-brown-125)]/80 flex items-center justify-center z-50"
     >
       <div
-        class="bg-white w-full max-w-3xl mx-4 md:mx-0 shadow-xl relative overflow-hidden"
+        class="bg-white w-full max-w-3xl mx-4 md:mx-0 shadow-2xl relative overflow-hidden"
       >
         <button
           class="absolute cursor-pointer top-3 right-4 text-gray-600 hover:text-black"
@@ -54,14 +54,3 @@ defineProps({
 
 defineEmits(["close"]);
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.25s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
