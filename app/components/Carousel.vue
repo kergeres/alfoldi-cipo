@@ -36,7 +36,7 @@ import { ref } from "vue";
 import Carousel from "primevue/carousel";
 import ProductCard from "~/components/ProductCard.vue";
 import ProductModal from "~/components/ProductModal.vue";
-import { useProducts } from "@/composables/useProducts";
+import { useProducts } from "~/composables/useProducts";
 
 const { products } = useProducts(8);
 

@@ -76,7 +76,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import { useProducts } from "@/composables/useProducts";
+import { useProducts } from "~/composables/useProducts";
 import ProductCard from "~/components/ProductCard.vue";
 import ProductModal from "~/components/ProductModal.vue";
 
