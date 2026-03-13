@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt generate",
-    "deploy": "gh-pages -d .output/public",
+    "deploy": "gh-pages -d .output/public --dotfiles",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
